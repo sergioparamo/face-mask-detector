@@ -1,37 +1,54 @@
-# face-mask-detector
 
-This project aims to recognize people who are wearing a mask or not, the distinctive colors for recognition are green for the person who uses a mask and red for those who do not.
+# Face Mask Detector
 
-The project is divided into the following parts:
+This project uses a **deep learning model** with [OpenCV](https://opencv.org/) to detect whether individuals are wearing masks. The detection output highlights mask-wearing individuals with a green box and those not wearing a mask with a red box.
 
-Dataset: contains 2 folders with images in JPG format of sample of people wearing masks and people without using them. All these images will be processed and used to train the model that will perform the subsequent recognition.
 
-Face detector: Files used for the face-detection algorithm in the detect_mask_video file
+## Project Components
 
-train_mask_detector.py: Python file that will train the model using the images that we have added in the dataset section
+- **Dataset**: Contains images of people wearing masks and those not wearing them, used for training the model.
+- **train_mask_detector.py**: Python script for training the mask detection model using the dataset.
+- **detect_mask_video.py**: Python script for detecting mask-wearing status via webcam in real-time.
+- **mask_detector.model**: The trained model file.
+- **requirements.txt**: Lists the necessary libraries for the project.
+- **plot.png**: A plot illustrating the training process, showing loss and accuracy.
+- **cropped_faces**: Folder to store images of people not wearing masks, automatically populated by running `facedetector.py`.
+- **face-detector-demo.mp4**: Demo video showing the mask detection in action.
 
-detect_mask_video.py: Python file in charge of performing the recognition on an already trained model from the sample images.
+## Installation
 
-mask_detector.model: Python model on which we will work
+1. Clone this repository or download the files.
+2. Install the required dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
+3. **Train the model**:
+   Run the following command to train the mask detection model:
+   ```bash
+   python train_mask_detector.py
+   ```
+   Training takes approximately 20 minutes.
 
-requirements.txt: Installation requirements file for the correct compatibility of the project
+4. **Run the detection script**:
+   Once the model is trained, you can run the webcam detection using:
+   ```bash
+   python detect_mask_video.py
+   ```
 
-plot.png: Sample plot and its level of loss and precision
+   The webcam will activate, and the system will display whether individuals are wearing a mask. If someone is detected without a mask, their image will be saved in the `cropped_faces` folder.
 
-cropped_faces: Directory that will contain the images of people who do not wear a mask (it will be created automatically after running "facedetector.py")
+## Prerequisites
 
-face-detector-demo: Demo in mp4 format
+- Anaconda (for managing dependencies)
+- PyCharm (optional, for IDE usage)
+- A webcam for real-time detection
+- Python (intermediate knowledge required)
 
-Installation and requirements:
+## Usage
 
-Anaconda Pycharm Internet connection Intermediate python knowledge Webcam
+- **Train the model**: Run `train_mask_detector.py` to train on the provided dataset.
+- **Real-time detection**: Execute `detect_mask_video.py` to use the model for live detection through your webcam.
 
-Installation process:
+---
 
-First of all we need to satisfy the requirements on the "requirements.txt" file, we can install them by running "pip install -r requirements.txt" with the anaconda interpreter.
-
-Then we have to execute the train class which will train the model train_mask_detector.py. The training process will take about 20 minutes.
-
-Once the model has finished its training we have to execute the python file detect_mask_video.py.
-
-Now the webcam will be activated and we can use it. If the system detects that you are not wearing your mask it will take a picture of your face and store it on the "cropped_faces" folder.
+Enjoy using the Face Mask Detector! For any issues or contributions, feel free to open an issue or pull request.
