@@ -8,11 +8,11 @@ This project uses a **deep learning model** with [OpenCV](https://opencv.org/) t
 
 - **Dataset**: Contains images of people wearing masks and those not wearing them, used for training the model.
 - **train_mask_detector.py**: Python script for training the mask detection model using the dataset.
-- **detect_mask_video.py**: Python script for detecting mask-wearing status via webcam in real-time.
-- **mask_detector.model**: The trained model file.
+- **detect_mask_video.py**: Python script for detecting mask-wearing status via webcam in real-time and save cropped faces.
+- **mask_detector.model**: The trained model file (generated after training).
 - **requirements.txt**: Lists the necessary libraries for the project.
 - **plot.png**: A plot illustrating the training process, showing loss and accuracy.
-- **cropped_faces**: Folder to store images of people not wearing masks, automatically populated by running `facedetector.py`.
+- **cropped_faces**: Folder to store images of people not wearing masks, automatically populated by running `detect_mask_video.py`.
 - **face-detector-demo.mp4**: Demo video showing the mask detection in action.
 
 ## Installation
